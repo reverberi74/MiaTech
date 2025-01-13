@@ -1,4 +1,9 @@
 ###
-- Introduzione HTML
-- Semantica, immagini e media
-- Forms
+- Introduzione
+- Elementi di HTML
+- Tag & Attributi
+- Block & Inline
+- Semantica
+- Immagini Responsive
+- Video & Audio
+- SVG
