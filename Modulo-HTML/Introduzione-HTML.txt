@@ -1,9 +1,0 @@
-###
-- Introduzione
-- Elementi di HTML
-- Tag & Attributi
-- Block & Inline
-- Semantica
-- Immagini Responsive
-- Video & Audio
-- SVG
