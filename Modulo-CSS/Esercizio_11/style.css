@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Esercizio_10">
-    <meta name="author" content="Luca Calvo">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <title>Modulo-CSS</title>
-</head>
-
-<body>
-
-    
-</body>
-
-</html>
+a:hover{
+    background-color: green;
+    color: white;
+}
