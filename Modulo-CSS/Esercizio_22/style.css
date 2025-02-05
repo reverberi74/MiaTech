@@ -1,0 +1,6 @@
+:root{
+    --colore-principale: red;
+}
+*{
+    color: var(--colore-principale);
+}
