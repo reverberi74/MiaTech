@@ -4,6 +4,7 @@
 }
 .square{
     width: 8%;
+    height: 8%;
     padding-top:  8%;
     background: blue;
     display: inline-block;
