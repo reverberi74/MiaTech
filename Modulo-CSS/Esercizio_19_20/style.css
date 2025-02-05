@@ -1,0 +1,17 @@
+#container{
+    width: 100px;
+
+}
+.square{
+    width: 8%;
+    padding-top:  8%;
+    background: blue;
+    display: inline-block;
+}
+
+.square2{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: red;
+}
