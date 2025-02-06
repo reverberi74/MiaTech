@@ -1,0 +1,25 @@
+:root{
+    --colore-principale: #A0DEDB;
+    --variable-padding-lista: 300px;
+    --variable-padding: 200px;
+    --variable-margin: 150px;
+    --variable-border: 50px;
+
+    
+}
+body{
+    background-color:var(--colore-principale);
+}
+ 
+.lista{
+    padding-left:var(--variable-padding-lista);
+}
+img{
+    width:500px;
+    height:350px;
+}
+#img{
+    padding-left: var(--variable-padding);
+    margin: var(--variable-margin);
+    border: var(--variable-border);
+}
