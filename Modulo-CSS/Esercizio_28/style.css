@@ -1,0 +1,36 @@
+article{
+    background-color: aqua;
+    border: 2px solid blue;
+    width: 600px;
+    padding: 50px;
+    margin: 20px;
+}
+p{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#sp1{
+    display: inline;
+    background-color: red;
+    border: 2px solid green;
+    padding: 20px;
+    width: 100px;
+    height: 200px;
+}
+#sp2{
+    display: inline-block;
+    background-color: red;
+    border: 2px solid green;
+    padding: 20px;
+    width: 100px;
+    height: 200px;
+}
+#sp3{
+    display: block;
+    background-color: red;
+    border: 2px solid green;
+    padding: 20px;
+    width: 100px;
+    height: 200px;
+}
