@@ -5,4 +5,11 @@
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
   }
-  
+
+  .col p {
+    flex-direction: column;
+    margin: 5px 0;
+    padding: 50px;
+    background-color: azure;
+    width: 30%;
+}
