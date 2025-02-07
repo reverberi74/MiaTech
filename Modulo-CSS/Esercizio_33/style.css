@@ -1,0 +1,8 @@
+.col {
+    background-color: aquamarine;
+    width: 100%;
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+  }
+  
