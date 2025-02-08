@@ -1,0 +1,17 @@
+*{
+    background-color: azure;
+ }
+ nav{
+    position: fixed;
+    top:0px;
+    background-color: beige;
+ }
+ p, ul,img{
+    margin-top: 20px;
+    border: 1 px solid black; 
+    padding: 8px 10px; 
+    width: 500px; 
+    border-radius: 15px; 
+    box-shadow: 0px 4px 8px black, 0px -4px 10px black; 
+  }
+   
