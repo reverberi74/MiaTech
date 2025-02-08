@@ -1,0 +1,19 @@
+body {
+    height: 200vh; /* Per avere spazio per lo scrolling */
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+ .square {
+    opacity: 1;
+}
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition: opacity 0.5s ease;
+}
