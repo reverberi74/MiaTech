@@ -1,0 +1,30 @@
+.container {
+    background-color: aqua;
+    display: flex;
+   flex-wrap: wrap;
+    width: 400px;
+    gap: 20px;    
+}
+
+.rettangolo {
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+}
+
+.quadrato {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.quadrato2 {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+.cerchio {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    border-radius: 60%;
+}
