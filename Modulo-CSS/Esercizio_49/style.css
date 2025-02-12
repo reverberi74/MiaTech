@@ -22,7 +22,4 @@
     background-color: lightblue;
 }
 
-.item8-9{
-        grid-column: span 2; /* Occupa 2 colonne */
-        background-color: lightcoral;
-}
+ 
