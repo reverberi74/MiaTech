@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.calcolatrice {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
+
+.display {
+    grid-column: span 4;
+    background-color: #333;
+    color: white;
+    font-size: 2rem;
+    text-align: right;
+    padding: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.button {
+    background-color: #444;
+    color: white;
+    font-size: 1.5rem;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: #666;
+}
+
+.operator {
+    background-color: #ff9500;
+}
+.reset {
+    background-color: red;
+}
+.operator:hover {
+    background-color: #e08900;
+}
+
+.zero {
+    grid-column: span 2; /* Il pulsante "0" occupa due colonne */
+}
+
+.equal {
+    background-color: #28a745;
+    grid-column: span 2; /* "=" occupa due colonne */
+}
+
+.equal:hover {
+    background-color: #218838;
+}
