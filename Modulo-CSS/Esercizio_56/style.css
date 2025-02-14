@@ -10,6 +10,10 @@ body {
     width: 100%;
     background-color: aquamarine;
 }
+img{
+    width:500px;
+    height:350px
+}
 @media screen and (max-width: 768px) {
     body {
         background-color: blue;
