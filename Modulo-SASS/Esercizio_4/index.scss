@@ -5,9 +5,13 @@ $font-size: 18px;
   }
 nav {
   ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     li {
-      display: inline-block;
       &:last-child {
         @extend %bg-gray;
         border-color: #333333;

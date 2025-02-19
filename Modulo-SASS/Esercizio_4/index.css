@@ -3,10 +3,12 @@ nav ul li:last-child {
 }
 
 nav ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
-}
-nav ul li {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 nav ul li:last-child {
   border-color: #333333;
