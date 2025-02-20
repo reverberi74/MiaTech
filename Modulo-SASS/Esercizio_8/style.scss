@@ -1,0 +1,13 @@
+$base-font-size: 16px;
+@function px-to-em($px, $base: $base-font-size) {
+    @return ($px / $base) * 1em;
+}
+
+h1 {
+    font-size: px-to-em(32px);
+}
+
+p {
+    font-size: px-to-em(16px);
+    color: blue;
+}
