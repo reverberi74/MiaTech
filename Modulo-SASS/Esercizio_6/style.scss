@@ -1,0 +1,13 @@
+@use 'colors';
+
+.container {
+    display: flex;
+    justify-content: center;
+    background-color: colors.$light-blue;
+    border: 2px solid colors.$dark-blue;
+}
+
+p {
+    color: colors.$text-color;
+}
+ 

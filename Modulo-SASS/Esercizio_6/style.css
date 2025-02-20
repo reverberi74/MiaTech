@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #a4cae9;
+  border: 2px solid #3d0ea8;
+}
+
+p {
+  color: red;
+}
+
+/*# sourceMappingURL=style.css.map */
