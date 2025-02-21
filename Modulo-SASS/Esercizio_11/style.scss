@@ -1,0 +1,54 @@
+$colors: red, blue, green, orange; // Definizione della lista di colori
+$primary-color: #ff0000;
+$secondary-color: #333;
+$font-size: 18px;
+$first-div-ratio: 1fr;
+$second-div-ratio: 3fr;
+ 
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      li {
+            @each $color in $colors {
+                 .menu-item-#{$color} {
+                 background-color: $color;
+                 padding: 10px 20px;
+                 margin: 5px;
+                 border-radius: 5px;
+                 color: white;
+                 text-decoration: none;
+                 font-weight: bold;
+                 transition: background 0.3s;
+
+                        &:hover {
+                            color: $primary-color;
+                               }
+                          }
+                   }
+        }
+    }
+}
+.box {
+  display: grid;
+  grid-template-columns: $first-div-ratio $second-div-ratio; 
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+
+}
+
+
+.container_1 {
+  background-color: #f1c40f;
+}
+
+.container_2 {
+  background-color: #3498db;
+
+}
