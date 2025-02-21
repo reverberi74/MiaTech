@@ -1,0 +1,43 @@
+$primary-color: #ff0000;
+$secondary-color: #333;
+$font-size: 18px;
+$first-div-ratio: 1fr;
+$second-div-ratio: 3fr;
+nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      li {
+        text-align: center;
+        a {
+          text-decoration: none;
+          color: black;
+          font-size: $font-size;
+          &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+        }
+    }
+.box {
+  display: grid;
+  grid-template-columns: $first-div-ratio $second-div-ratio; 
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+
+}
+
+@for $i from 1 through 2 {
+  .container-#{$i} {
+      background-color: if($i == 1, #629acc, #333);
+      color: if($i == 1, #333, white);
+      border-radius: 10px;
+  }
+}
