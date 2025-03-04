@@ -1,8 +1,5 @@
 // if, else if & else
-let score = prompt("Inserisci un numero:");
-
-// Converti l'input in un numero
-score = Number(score);
+let score = parseInt(prompt("Inserisci il tuo punteggio:"));
 
 if (score >=90 && score <=100) {
     alert("Voto Ottimo");
