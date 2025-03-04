@@ -1,3 +1,4 @@
+// Stampo le parole sia in console che nella pagina html 
 let parole = []; // Creazione dell'array vuoto
 let numeroParole = parseInt(prompt("Quante parole vuoi inserire?")); // Chiede il numero di parole
 
