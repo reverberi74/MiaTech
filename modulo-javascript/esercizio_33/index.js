@@ -41,10 +41,10 @@ class Elettrica extends Automobile {
 }
 
 // Creiamo un'auto elettrica
-const tesla = new Elettrica("Citroen", "e-C3", 2024, 5000, 800);
+const citroen = new Elettrica("Citroen", "e-C3", 2024, 5000, 800);
 
-console.log(tesla.descrizione()); // output: Auto: Citroen e-C3, Anno: 2024, Chilometraggio: 5000 km, Autonomia: 800 km
-tesla.aggiungiChilometri(400);
-console.log(tesla.mostraChilometraggio()); // output: Chilometraggio attuale: 5400 km
-tesla.ricarica(50); // output: Batteria ricaricata di 50 km. Nuova autonomia: 850 km
-console.log(tesla.descrizione()); // Verifica aggiornamento: Auto: Citroen e-C3, Anno: 2024, Chilometraggio: 5400 km, Autonomia: 850 km
+console.log(citroen.descrizione()); // output: Auto: Citroen e-C3, Anno: 2024, Chilometraggio: 5000 km, Autonomia: 800 km
+citroen.aggiungiChilometri(400);
+console.log(citroen.mostraChilometraggio()); // output: Chilometraggio attuale: 5400 km
+citroen.ricarica(50); // output: Batteria ricaricata di 50 km. Nuova autonomia: 850 km
+console.log(citroen.descrizione()); // Verifica aggiornamento: Auto: Citroen e-C3, Anno: 2024, Chilometraggio: 5400 km, Autonomia: 850 km
