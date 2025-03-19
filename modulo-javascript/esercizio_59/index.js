@@ -8,4 +8,4 @@ const utente = {
 
 const jsonString = JSON.stringify(utente);
 
-console.log(jsonString);
+console.log(jsonString); // output: {"nome":"Luca","cognome":"Calvo","età":50,"email":"luca.calvo@gmail.com"}
