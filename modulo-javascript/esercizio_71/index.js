@@ -13,7 +13,6 @@ function dividi(a, b) {
         console.error("Si è verificato un errore:", error.message);
     }
 }
-
 dividi(12, 4); // Output: Il risultato della divisione è: 3
 dividi(8, 0);  // Output: Si è verificato un errore: Divisione per zero non consentita!
  
