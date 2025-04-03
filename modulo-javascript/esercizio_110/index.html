@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+</head>
+<body>
+    <h2>Compila il form</h2>
+
+    <form id="myForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome"><br><br>
+
+        <button type="submit">Invia</button>
+    </form>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            let nome = document.getElementById("nome").value.trim();
+            let cognome = document.getElementById("cognome").value.trim();
+
+            if (nome === "" || cognome === "") {
+                alert("Per favore, compila entrambi i campi!");
+                event.preventDefault(); // Blocca l'invio del form
+            } else {
+                // Se tutti i campi sono compilati, invia il form
+                alert('Form valido! Dati: ' + nome + ' ' + cognome);
+                form.submit();
+            }
+            });
+        
+    </script>
+</body>
+
+</html>
