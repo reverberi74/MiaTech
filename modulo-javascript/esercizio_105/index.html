@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifica Testo Paragrafo</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Modifica testo di un paragrafo con innerHTML</h1>
+        <p id="paragrafo">Rondò Veneziano è un ensemble musicale italiano
+             che si ispira alla musica barocca sposando sonorità del pop e del rock.
+        </p>
+    </div>
+
+    <script>
+        // Seleziona un elemento con id "paragrafo"
+        let elemento = document.getElementById("paragrafo");
+
+        // Modifica il contenuto dell'elemento
+        elemento.innerHTML = "Gian Piero Reverberi fondatore di Rondò Veneziano";
+    </script>
+</body>
+
+</html>
