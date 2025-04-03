@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizzo di getElementById</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Utilizzo di getElementById</h1>
+        <p id="paragrafo">Questo è un paragrafo di esempio.</p>
+    </div>
+
+    <script>
+        // Seleziona un elemento con id "paragrafo"
+        let elemento = document.getElementById("paragrafo");
+
+        // Modifica il contenuto dell'elemento
+        elemento.innerHTML = "Il testo è stato modificato!";
+
+        // Modifica lo stile dell'elemento
+        elemento.style.color = "red";
+        elemento.style.fontSize = "20px"; 
+    </script>
+</body>
+
+</html>
