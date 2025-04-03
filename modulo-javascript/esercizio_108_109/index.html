@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea una lista - Crea I List ITEMS</title>
+</head>
+
+<body>
+    <h1>Crea una lista non ordinata e 5 List ITEMS</h1>
+    <button id="creaLista">Crea Lista</button>
+    <div id="contenitore"></div>
+
+    <script>
+        document.querySelector("#creaLista").addEventListener("click", function () {
+            // crea un array di 5 elementi per la creazione dei 5 list items
+            let elementiFrutta = ["Mela", "Banana", "Arancia", "Kiwi", "Fragola"];
+
+            // Crea la lista non ordinata
+            let lista = document.createElement("ul"); // Crea l'elemento <ul>
+
+            // Crea e aggiungi elementi alla lista tramite un ciclo
+            elementiFrutta.forEach(function (frutta) {
+                let elemento = document.createElement("li");
+                elemento.textContent = frutta;
+                lista.appendChild(elemento);
+            });
+
+            // Aggiunge la lista al div contenitore
+            document.querySelector("#contenitore").appendChild(lista);  
+        });
+    </script>
+</body>
+
+</html>
