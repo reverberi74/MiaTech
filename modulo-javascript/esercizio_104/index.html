@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizzo di querySelector</title>
+</head>
+<body>
+    <h1>Utilizzo di querySelector</h1>
+    <p id="testo">Ciao, questo è un testo di esempio!</p>
+    <button id="cambiaTesto">Cambia Testo</button>
+
+    <script>
+        document.querySelector("#cambiaTesto").addEventListener("click", function() {
+            document.querySelector("#testo").textContent = "Il testo è stato cambiato!";
+        });
+    </script>
+</body>
+</html>
