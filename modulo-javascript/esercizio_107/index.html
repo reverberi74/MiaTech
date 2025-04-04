@@ -16,7 +16,7 @@
     <script>
         document.querySelector("#modificaContenuto").addEventListener("click", function () {
             document.querySelector("#paragrafo").innerHTML =
-                'Il testo è stato modificato!';
+                'Il testo è stato modificato! <button onclick="alert(\'Bottone nel paragrafo cliccato!\')">Nuovo Bottone</button>';
             paragrafo.style.fontSize = "18px";
             paragrafo.style.fontFamily = "Arial, sans-serif";
         });
