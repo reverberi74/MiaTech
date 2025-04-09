@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configurazione personalizzata Tailwind -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: "#4F46E5", // viola indaco
+                secondary: "#F59E0B", // arancione ambra
+                background: "#F3F4F6" // grigio chiaro
+              },
+              fontSize: {
+                'xxs': '0.65rem',
+                'xxl': '2.5rem'
+              },
+              spacing: {
+                '18': '4.5rem',
+                '30': '7.5rem'
+              }
+            }
+          }
+        }
+      </script>
+    <title>Tema personalizzato</title>
+</head>
+
+<body>
+    <div class="bg-background text-gray-800">
+        <div class="container mx-auto py-10 px-6">
+    
+          <h1 class="text-xxl text-primary font-bold mb-6">Titolo con font personalizzato</h1>
+    
+          <p class="text-xxs text-secondary mb-4">
+            Questo paragrafo usa una dimensione del testo personalizzata (xxs) e un colore personalizzato (secondary).
+          </p>
+    
+          <div class="bg-primary text-white p-18 mb-6 rounded-lg shadow-md">
+            Box con padding personalizzato (<code>p-18</code>)
+          </div>
+    
+          <div class="bg-secondary text-white p-6 mt-30 rounded-lg shadow-md">
+            Altro box con <code>margin-top: mt-30</code> personalizzato
+          </div>
+    
+        </div>
+    </div>
+</body>
