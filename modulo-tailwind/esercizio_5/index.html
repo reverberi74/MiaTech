@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configurazione personalizzata Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    spacing: {
+                        '72': '18rem', // 288px
+                        '84': '21rem'  // 336px
+                    }
+                }
+            }
+        };
+    </script>
+    <title>Estensione delle dimensioni</title>
+</head>
+
+<body>
+    <div class="bg-gray-100 text-gray-800">
+        <div class="container mx-auto my-12 px-6 py-8 bg-white rounded-lg shadow-md">
+            <h1 class="text-3xl font-bold mb-4">Esempio con padding e margin personalizzati</h1>
+
+            <!-- Box con padding personalizzato -->
+            <div class="bg-blue-500 text-white p-72 mb-8">
+                Box con <code>p-72</code> (padding 288px)
+            </div>
+
+            <!-- Box con margin personalizzato -->
+            <div class="bg-green-500 text-white p-8 mt-84">
+                Box con <code>mt-84</code> (margin-top 336px)
+            </div>
+        </div>
+    </div>
+</body>
