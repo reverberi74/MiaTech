@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configurazione personalizzata Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1A73E8",      // blu
+                        secondary: "#FBBC05",    // giallo
+                        accent: "#34A853",       // verde
+                        danger: "#EA4335",       // rosso
+                        muted: "#5F6368",        // grigio
+                    }
+                }
+            }
+        }
+    </script>
+    <title>Colori di testo</title>
+</head>
+
+<body>
+    <div class="bg-white p-8">
+
+        <div class="max-w-3xl mx-auto space-y-6">
+
+            <h1 class="text-4xl font-bold text-primary">Benvenuto nella mia pagina</h1>
+
+            <h2 class="text-2xl font-semibold text-secondary">Sottotitolo colorato</h2>
+
+            <p class="text-muted leading-relaxed">
+                Questo è un paragrafo che utilizza un colore grigio personalizzato per rendere il testo più leggibile e
+                meno invadente.
+            </p>
+
+            <p class="text-accent">
+                Questo è un altro paragrafo, ma con un accento verde per dare risalto a una sezione.
+            </p>
+
+            <a href="#" class="text-danger underline hover:text-primary transition">
+                Clicca qui per un'azione importante!
+            </a>
+
+        </div>
+
+    </div>
+</body>
