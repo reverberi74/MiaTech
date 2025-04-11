@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        @layer components {
+          .col {
+            @apply bg-blue-100 border border-blue-300 p-4 rounded text-center shadow;
+          }
+        }
+      </style>
+    <title>Contenitore</title>
+</head>
+
+<body>
+    <div class="bg-gray-100 min-h-screen p-10">
+
+        <!-- Sezione con flex-row (tre colonne affiancate) -->
+        <section class="mb-12">
+            <h1 class="text-2xl font-bold mb-6 text-center">Tre Colonne Affiancate (flex-row)</h1>
+            <div class="flex flex-row gap-4 max-w-5xl mx-auto">
+                <div class="col flex-1">
+                    <h2 class="text-lg font-semibold mb-2">Colonna 1</h2>
+                    <p>Contenuto della prima colonna.</p>
+                </div>
+                <div class="col flex-1">
+                    <h2 class="text-lg font-semibold mb-2">Colonna 2</h2>
+                    <p>Contenuto della seconda colonna.</p>
+                </div>
+                <div class="col flex-1">
+                    <h2 class="text-lg font-semibold mb-2">Colonna 3</h2>
+                    <p>Contenuto della terza colonna.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione con flex-col (tre colonne impilate) -->
+        <section>
+            <h1 class="text-2xl font-bold mb-6 text-center">Tre Colonne Impilate (flex-col)</h1>
+            <div class="flex flex-col gap-4 max-w-xl mx-auto">
+                <div class="col">
+                    <h2 class="text-lg font-semibold mb-2">Colonna 1</h2>
+                    <p>Contenuto della prima colonna.</p>
+                </div>
+                <div class="col">
+                    <h2 class="text-lg font-semibold mb-2">Colonna 2</h2>
+                    <p>Contenuto della seconda colonna.</p>
+                </div>
+                <div class="col">
+                    <h2 class="text-lg font-semibold mb-2">Colonna 3</h2>
+                    <p>Contenuto della terza colonna.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
