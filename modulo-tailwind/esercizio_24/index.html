@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Condizionali</title>
+</head>
+<body>
+    <div class="bg-gray-100 text-gray-800 p-8">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-blue-600">Elementi Condizionali</h1>
+            <p class="text-gray-600">Alcuni elementi appaiono o scompaiono in base alla dimensione dello schermo.</p>
+        </header>
+        <main class="space-y-6">
+            <!-- Elemento solo per schermi piccoli -->
+            <div class="block md:hidden bg-blue-100 text-blue-800 p-4 rounded shadow">
+                <strong>Visibile solo su schermi piccoli</strong>
+                <p>(fino a md)</p>
+            </div>
+            <!-- Elemento solo per schermi medi -->
+            <div class="hidden md:block lg:hidden bg-yellow-100 text-yellow-800 p-4 rounded shadow">
+                <strong>Visibile solo su schermi medi</strong>
+                <p>(da md fino a lg)</p>
+            </div>
+            <!-- Elemento solo per schermi grandi -->
+            <div class="hidden lg:block bg-green-100 text-green-800 p-4 rounded shadow">
+                <strong>Visibile solo su schermi grandi</strong>
+                <p>(lg e superiori)</p>
+            </div>
+            <!-- Elemento sempre visibile -->
+            <div class="bg-gray-200 text-gray-900 p-4 rounded shadow">
+                <strong>Sempre visibile</strong>
+                <p>(indipendentemente dalla dimensione)</p>
+            </div>
+        </main>
+    </div>
+</body>
