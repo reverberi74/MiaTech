@@ -1,1 +1,1 @@
-# MiaTech - Corso di Web Developer Front-End - 6° Modulo - Tailwind
+# MiaTech - Corso di Web Developer Front-End - 7° Modulo - React
