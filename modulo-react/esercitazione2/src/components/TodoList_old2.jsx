@@ -37,8 +37,8 @@ const TodoList = () => {
     }, []);
 
     // 1 - Soluzione non corretta
-    /*// Memoizzazione della lista filtrata utilizzando useFilteredTodo dentro useMemo
-    const filteredTodos = useMemo(() => {
+    // Memoizzazione della lista filtrata utilizzando useFilteredTodo dentro useMemo
+    /*const filteredTodos = useMemo(() => {
       return useFilteredTodos(data, searchTerm);
     }, [data, searchTerm]);*/
 
@@ -53,7 +53,7 @@ const TodoList = () => {
 
     // 3 - Soluzione per mantenere useFilteredTodos convertita in una funzione filterTodos da usare con useMemo 
     // Usiamo useMemo con la funzione di utilità filterTodos
-    const filteredTodos = useMemo(() => {
+   const filteredTodos = useMemo(() => {
         return filterTodos(data, searchTerm);
     }, [data, searchTerm]);
 
