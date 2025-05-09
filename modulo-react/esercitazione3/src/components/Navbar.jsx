@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = () => { 
   return (
     <nav className="bg-white shadow-md py-4 px-6 flex justify-between items-center">
       <div className="text-xl font-bold text-blue-600">
