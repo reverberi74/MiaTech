@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
 /**
- * Componente che mostra una lista di to-do con campo di ricerca, con il termine di ricerca gestito tramite URL.
+ * Componente che mostra una lista di to-do con campo di ricerca, link ai dettagli e con il termine di ricerca gestito tramite URL.
  */
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
