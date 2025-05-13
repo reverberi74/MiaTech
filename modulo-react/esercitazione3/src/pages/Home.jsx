@@ -2,6 +2,7 @@ import React from 'react'
 import TodoList from '../components/TodoList'
 
 const Home = () => {
+  console.log("Home component rendered");
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white shadow-md py-4">
