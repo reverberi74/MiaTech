@@ -1,1 +1,1 @@
-# MiaTech - Corso di Web Developer Front-End - 7° Modulo - React
+# MiaTech - Corso di Web Developer Front-End - 8° Modulo - Typescript
