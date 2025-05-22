@@ -6,7 +6,8 @@ export interface Todo {
     title: string;
     completed: boolean;
     userId?: number; // proprietà opzionale per associare un utente
-    metadata?: any[]; // Nuova proprietà opzionale con Metadata
+    metadata?: string | object; // metadata di tipo string | object opzionale  
+  
 }
 
 // Interfaccia TodoWithMetaData che estende Todo
@@ -19,4 +20,14 @@ export interface User {
     id: number;
     name: string;
     email?: string; // campo opzionale
+    readonly todos: ReadonlyArray<Todo>; // Utilizzare Array Readonly
+}
+
+/**
+ * Interfaccia che rappresenta un progetto composto da utenti e todo.
+ */
+export interface Project {
+  name: string;
+  users: User[];
+  todos: Todo[];
 }
