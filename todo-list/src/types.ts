@@ -6,7 +6,8 @@ export interface Todo {
     title: string;
     completed: boolean;
     userId?: number; // proprietà opzionale per associare un utente
-    metadata?: string | object; // metadata di tipo string | object opzionale  
+    metadata?: string | object; // metadata di tipo string | object opzionale 
+    status: TodoStatus; // include una proprietà status di tipo TodoStatus 
   
 }
 
@@ -30,4 +31,11 @@ export interface Project {
   name: string;
   users: User[];
   todos: Todo[];
+}
+
+// Enum per rappresentare lo stato del Todo
+export enum TodoStatus {
+  Pending = "Pending",
+  InProgress = "InProgress",
+  Completed = "Completed",
 }

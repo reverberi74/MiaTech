@@ -1,5 +1,9 @@
 import { TodoWithMetaData } from "./types";
-import { Project, User, Todo } from "./types";
+import { Project, User, Todo, TodoStatus } from "./types";
+import { UserModel } from "./User";
+import { filterTodos } from "./utils";
+
+
 
 // Array dei todo
 const todos: Todo[] = [];
@@ -10,7 +14,7 @@ let nextId = 1;
 // Funzione per aggiungere un nuovo Todo
 let nextTodoId = 1;
 
-// Tipi Union Metadata string | object (1° Esercizio dei 5 rimasti)
+// Tipi Union Metadata string | object 
 /**
  * Aggiunge un nuovo Todo all'elenco.
  * @param title - Titolo del nuovo Todo
@@ -23,6 +27,7 @@ function addTodo(title: string, metadata?: string | object): Todo {
     title,
     completed: false,
     metadata, // opzionale
+    status: TodoStatus.Pending,
   };
 
   todos.push(newTodo);
@@ -63,9 +68,20 @@ function parseInput(input: unknown): string {
   return error("Tipo di input non valido");
 }
 
-// Utilizzare Array Readonly nel file type.ts (3° Esercizio dei 5 rimasti)
+//funzione per aggiornare lo stato di un Todo esistente updateTodoStatus
+function updateTodoStatus(todoId: number, status: TodoStatus): void {
+  const todo = todos.find(t => t.id === todoId);
+  if (todo) {
+    todo.status = status;
+    console.log(`Stato del Todo con id ${todoId} aggiornato a ${status}`);
+  } else {
+    console.log(`Todo con id ${todoId} non trovato`);
+  }
+}
 
-// Utilizzate tipi Utility: updateTodo (2° Esercizio dei 5 rimasti)
+// Utilizzare Array Readonly nel file type.ts 
+
+// Utilizzate tipi Utility: updateTodo 
 /**
  * Aggiorna parzialmente un Todo esistente.
  * @param id - ID del Todo da aggiornare
@@ -80,7 +96,7 @@ function updateTodo(id: number, updates: Partial<Todo>): Todo | undefined {
   return todo;
 }
 
-// Utilizzare Tuple (4° Esercizio dei 5 rimasti)
+// Utilizzare Tuple 
 /**
  * Restituisce un riepilogo del Todo come tupla.
  * @param todo Oggetto Todo
@@ -90,7 +106,7 @@ function getTodoSummary(todo: Todo): [string, boolean] {
   return [todo.title, todo.completed];
 }
 
-// Finalizzare il Progetto (5° Esercizio dei 5 rimasti)
+// Finalizzare il Progetto 
 /**
  * Crea un oggetto Project.
  * @param name Nome del progetto
@@ -140,31 +156,35 @@ const specialTodo: TodoWithMetaData = {
   title: "Esercizio con extends",
   completed: false,
   metadata: ["dato extra", { note: "Importante" }],
+   status: TodoStatus.Completed,
 };
 
 console.log("Todo con metadata obbligatorio:", specialTodo);
-//--------------------------------------------------------------------------------------------------------------//
-//-----------------------------------------------Nuovi Esercizi-------------------------------------------------//
-//----------------------------------------(1° Esercizio dei 5 rimasti)------------------------------------------//
+
 // Test metadata con oggetto o stringa
 addTodo("Scrivere documentazione", "Urgente");
 addTodo("Aggiornare schema", { step: 3, note: "Controllare validità" });
 console.log("Lista Todo aggiornata con metadata string ed object:", todos);
-//----------------------------------------(2° Esercizio dei 5 rimasti)-------------------------------------------//
+
 // Utilizzate tipi Utility: updateTodo
 // Test funzione updateTodo che può aggiornare parzialmente le proprietà di un Todo che usa il tipo utility Partial
 addTodo("Preparare la cena");
 updateTodo(1, { completed: true }); // aggiorna solo `completed`
 updateTodo(1, { title: "Preparare la cena e lavare i piatti" }); // aggiorna solo `title`
 console.log("Lista Todo aggiornata con updateTodo:", todos);
-//-----------------------------------------(3° Esercizio dei 5 rimasti)--------------------------------------------//
+
 // Test readonly
 const user1: User = {
   id: 1,
   name: "Mario",
   todos: [
-    { id: 1, title: "Leggere un libro", completed: false },
-  ]
+    {
+      id: 1,
+      title: "Leggere un libro",
+      completed: false,
+      status: TodoStatus.Pending, 
+    },
+  ],
 };
 
 // Non è possibile modificare l'array:
@@ -172,18 +192,19 @@ const user1: User = {
 
 // È possibile leggere i dati:
 console.log(user1.todos[0].title); // Leggere un libro
-//--------------------------------------(4° Esercizio dei 5 rimasti)--------------------------------------------------// 
+
 // Test getTodoSummary
 const mioTodo: Todo = {
   id: 1,
   title: "Rivedere gli appunti",
   completed: true,
+  status: TodoStatus.Completed, 
 };
 
 const [titolo, stato] = getTodoSummary(mioTodo);
 console.log("Titolo:", titolo); // Titolo: Rivedere gli appunti
 console.log("Completato:", stato); // Completato: true
-//------------------------------------(5° Esercizio dei 5 rimasti)-----------------------------------------------------//
+
 // Test finale: creare un progetto
 const utenti: User[] = [
   { id: 101, name: "Marco", todos: [] },
@@ -191,3 +212,53 @@ const utenti: User[] = [
 ];
 const progettoFinale = createProject("ToDo App TypeScript", utenti, todos);
 console.log("Progetto creato:", JSON.stringify(progettoFinale, null, 2));
+//------------------------------------------------------------------------------------------------------------------//
+// esempio di utilizzo della funzione updateTodoStatus:
+// Aggiunta di un nuovo Todo
+const nuovoTodo = addTodo("Scrivere documentazione");
+
+// Aggiornamento dello stato del Todo
+updateTodoStatus(nuovoTodo.id, TodoStatus.InProgress);
+
+// test classe UserModel
+const u1 = new UserModel(1, "Mario Rossi", "mario@example.com");
+const u2 = new UserModel(2, "Lucia Bianchi");
+
+console.log(u1, u2);
+
+//Test metodo addTodo della classe UserModel per assegnazione dei todo a due utenti
+// Crea utenti
+const users = [
+  new UserModel(1, "Giulia", "giulia@gmail.com"),
+  new UserModel(2, "Marco", "marco@gmail.com"),
+];
+
+// Crea tutti i todo
+const sampleTodos = [
+  { id: 1, title: "Comprare il pane", completed: false, status: TodoStatus.Pending },
+  { id: 2, title: "Preparare la cena", completed: false, status: TodoStatus.InProgress },
+  { id: 3, title: "Studiare TypeScript", completed: false, status: TodoStatus.Pending },
+  { id: 4, title: "Scrivere documentazione", completed: false, status: TodoStatus.Completed },
+];
+
+// Assegna i primi 2 todo a Giulia, gli altri 2 a Marco
+users[0].addTodo(sampleTodos[0]);
+users[0].addTodo(sampleTodos[1]);
+
+users[1].addTodo(sampleTodos[2]);
+users[1].addTodo(sampleTodos[3]);
+
+// Stampa tutti i todo di ciascun utente
+users.forEach(user => {
+  console.log(`Todo di ${user.name}:`);
+  console.log(user.todos);
+});
+
+// Test filteredTodos
+// Filtra i todo completati
+const completedTodos = filterTodos(todos, (todo) => todo.completed);
+console.log("Todo completati:", completedTodos);
+
+// Filtra i todo con stato Pending
+const pendingTodos = filterTodos(todos, (todo) => todo.status === TodoStatus.Pending);
+console.log("Todo in sospeso:", pendingTodos);
