@@ -2,6 +2,9 @@ import { TodoWithMetaData } from "./types";
 import { Project, User, Todo, TodoStatus } from "./types";
 import { UserModel } from "./User";
 import { filterTodos } from "./utils";
+import { PartialTodo } from "./types";
+import { TodoRecord } from "./types";
+
 
 
 
@@ -122,6 +125,37 @@ function createProject(name: string, users: User[], todos: Todo[]): Project {
   };
 }
 
+/**
+ * Aggiorna parzialmente un Todo in base a un oggetto PartialTodo.
+ * @param id - ID del Todo da aggiornare
+ * @param updates - Oggetto con proprietà parziali da aggiornare
+ * @returns Il Todo aggiornato o undefined se non trovato
+ */
+function updatePartialTodo(id: number, updates: PartialTodo): Todo | undefined {
+  const todo = todos.find(t => t.id === id);
+  if (!todo) {
+    console.log(`Todo con id ${id} non trovato.`);
+    return undefined;
+  }
+
+  Object.assign(todo, updates);
+  console.log(`Todo con id ${id} aggiornato con:`, updates);
+  return todo;
+}
+
+/**
+ * Converte un array di Todo in un oggetto Record con chiavi basate sull'id.
+ * @param todos Array di Todo
+ * @returns Oggetto di tipo TodoRecord
+ */
+export function convertArrayToRecord(todos: Todo[]): TodoRecord {
+  const record: TodoRecord = {};
+  todos.forEach(todo => {
+    record[todo.id] = todo;
+  });
+  return record;
+}
+
 // ------------------------------
 // TEST FUNZIONALITÀ
 // ------------------------------
@@ -156,7 +190,7 @@ const specialTodo: TodoWithMetaData = {
   title: "Esercizio con extends",
   completed: false,
   metadata: ["dato extra", { note: "Importante" }],
-   status: TodoStatus.Completed,
+  status: TodoStatus.Completed,
 };
 
 console.log("Todo con metadata obbligatorio:", specialTodo);
@@ -182,7 +216,7 @@ const user1: User = {
       id: 1,
       title: "Leggere un libro",
       completed: false,
-      status: TodoStatus.Pending, 
+      status: TodoStatus.Pending,
     },
   ],
 };
@@ -198,7 +232,7 @@ const mioTodo: Todo = {
   id: 1,
   title: "Rivedere gli appunti",
   completed: true,
-  status: TodoStatus.Completed, 
+  status: TodoStatus.Completed,
 };
 
 const [titolo, stato] = getTodoSummary(mioTodo);
@@ -262,3 +296,12 @@ console.log("Todo completati:", completedTodos);
 // Filtra i todo con stato Pending
 const pendingTodos = filterTodos(todos, (todo) => todo.status === TodoStatus.Pending);
 console.log("Todo in sospeso:", pendingTodos);
+
+// Test updatePartialTodo
+updatePartialTodo(1, { title: "Titolo aggiornato", completed: true });
+updatePartialTodo(3, { metadata: { info: "Aggiornato da funzione parziale" } });
+
+// Test convertArrayToRecord
+const recordTodos = convertArrayToRecord(todos);
+console.log("Ogni chiave sarà l’id del Todo, e il valore sarà l’intero oggetto Todo");
+console.log("Todos in formato Record:", recordTodos);

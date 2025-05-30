@@ -39,3 +39,16 @@ export enum TodoStatus {
   InProgress = "InProgress",
   Completed = "Completed",
 }
+
+
+/**
+ * Tipo mappato che rende tutte le proprietà del tipo Todo opzionali.
+ */
+export type PartialTodo = {
+  [K in keyof Todo]?: Todo[K];
+};
+
+/**
+ * Tipo che mappa un id numerico a un oggetto Todo
+ */
+export type TodoRecord = Record<number, Todo>;
